@@ -1,1 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
+
+$wrap-border: solid #000;
+
+main {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  align-items: stretch;
+}
+
+.row1 {
+  border: $wrap-border;
+  width: calc(100%/3);
+}
+
+.row2 {
+  border: $wrap-border;
+  width: calc(100%/3);
+}
+
+.row3 {
+  border: $wrap-border;
+  width: calc(100%/3);
+}
