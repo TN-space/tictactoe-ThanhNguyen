@@ -14,14 +14,14 @@
     <body>
       <h1>Welcome to the game!</h1>
 
-      <P id="message"></P>
+      <P id="message">Message:</P>
     <form id="sign-up" class="border">
       <fieldset>
       <legend>Sign up:</legend>
 <input name ="credentials[email]" type="text" placeholder="Email">
 <input name ="credentials[password]" type="password" placeholder="Password">
 <input name ="credentials[password_confirmation]" type="password" placeholder="Confirm password">
-<input type="submit" value="Sign up!">
+<input type="submit" value="Sign up">
       </fieldset>
     </form>
 
@@ -31,6 +31,7 @@
 <input name ="credentials[email]" type="text" placeholder="Email">
 <input name ="credentials[password]" type="password" placeholder="Password">
 <input type="submit" value="Sign in">
+
       </fieldset>
     </form>
 
@@ -51,15 +52,24 @@
           </form>
 
       <main>
-        <div class="row1">box1</div>
-        <div class="row1">box2</div>
-        <div class="row1">box3</div>
-        <div class="row2">box4</div>
-        <div class="row2">box5</div>
-        <div class="row2">box6</div>
-        <div class="row3">box7</div>
-        <div class="row3">box8</div>
-        <div class="row3">box9</div>
+        <div class="row1 box" id='box1'>
+          <img class="hidden"> <p> </p></div>
+        <div class="row1 box" id='box2'>
+          <img class="hidden"> <p> </p></div>
+        <div class="row1 box" id='box3'>
+          <img class="hidden"> <p> </p></div>
+        <div class="row2 box" id='box4'>
+          <img class="hidden"> <p> </p></div>
+        <div class="row2 box" id='box5'>
+          <img class="hidden"> <p> </p></div>
+        <div class="row2 box" id='box6'>
+          <img class="hidden"> <p> </p></div>
+        <div class="row3 box" id='box7'>
+          <img class="hidden"> <p> </p></div>
+        <div class="row3 box" id='box8'>
+          <img class="hidden"> <p> </p></div>
+        <div class="row3 box" id='box9'>
+          <img class="hidden"> <p> </p></div>
 
       </main>
     </body>

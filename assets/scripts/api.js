@@ -38,10 +38,44 @@ const logOut = function () {
     }
   })
 }
+// -------------------------------------
+
+// const gameCreate = function () {
+//   return $.ajax({
+//     url: `/games` + '/game-create',
+//     method: 'POST',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
+//
+// const gameUpdate = function () {
+//   return $.ajax({
+//     url: `/games/:id` + '/game-update',
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
+//
+// const gameOver = function () {
+//   return $.ajax({
+//     url: `/games[?over=]` + '/game-over',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 
 module.exports = {
   signUp,
   signIn,
   pwChange,
   logOut
+  // gameCreate,
+  // gameUpdate,
+  // gameOver
 }
