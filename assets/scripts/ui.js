@@ -55,6 +55,22 @@ const logOutFailure = function (error) {
   console.log('logOutFailure error is: ', error)
 }
 
+const nextTurn = function (data) {
+  $('#message').removeClass()
+  const space = $(event.target).text()
+  if (space !== 'O' && space !== 'X') {
+    $('#message').text('Turn ' + data)
+    // $('#message').addClass('failure')
+    console.log('Turn: ', data)
+  } else {
+    $('#message').text('Still turn ' + data)
+  }
+}
+
+const endGame = function (data) {
+  $('#message').removeClass()
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -63,5 +79,7 @@ module.exports = {
   pwChangeSuccess,
   pwChangeFailure,
   logOutSuccess,
-  logOutFailure
+  logOutFailure,
+  nextTurn,
+  endGame
 }

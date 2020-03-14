@@ -8,6 +8,7 @@
 
 const authEvents = require('./events.js')
 const play = require('./functions.js')
+// const runThroughImport = require('./check-win')
 
 $(() => {
   // your JS code goes here
@@ -15,7 +16,10 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onPwChange)
   $('#log-out').on('submit', authEvents.onLogOut)
+  $('.box').on('click', authEvents.onTurn)
   $('.box').on('click', play.gamePlay)
+
+  // $('.box').on('click', runThroughImport.runThrough)
   // $('#box1').click(function () {
   //   console.log('click')
   // })

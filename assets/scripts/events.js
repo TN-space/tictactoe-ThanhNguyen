@@ -43,9 +43,23 @@ const onLogOut = function (event) {
   // or api.signUp(getFormFields(event.target))
 }
 
+let count = 0
+const onTurn = function (event) {
+  event.preventDefault()
+  const space = $(event.target).text()
+  console.log(space)
+  if (space !== 'O' && space !== 'X') {
+    count++
+    // or api.signUp(getFormFields(event.target)
+    console.log(count)
+  }
+  ui.nextTurn(count)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onPwChange,
-  onLogOut
+  onLogOut,
+  onTurn
 }
