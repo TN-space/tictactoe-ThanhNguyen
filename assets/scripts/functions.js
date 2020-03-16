@@ -47,7 +47,7 @@ const gamePlay = function (event) {
       ui.endGame()
       $('#message').text(`Game over~~! player ${board[3]} win!!`)
       console.log('winner is ' + board[3])
-    } else if (board[6] !== '' && board[6] === board[7] && board[6] === board[7]) {
+    } else if (board[6] !== '' && board[6] === board[7] && board[6] === board[8]) {
       gameOver = true
       ui.endGame()
       $('#message').text(`Game over~~! player ${board[6]} win!!`)

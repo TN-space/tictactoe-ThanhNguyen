@@ -71,6 +71,15 @@ const endGame = function (data) {
   $('#message').removeClass()
 }
 
+const pageLoaded1 = function (data) {
+  $('.second').style.visibility = 'visible'
+  $('.first').style.visibility = 'hidden'
+}
+const pageLoaded2 = function (data) {
+  $('.first').style.visibility = 'visible'
+  $('.second').style.visibility = 'hidden'
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -81,5 +90,7 @@ module.exports = {
   logOutSuccess,
   logOutFailure,
   nextTurn,
-  endGame
+  endGame,
+  pageLoaded1,
+  pageLoaded2
 }

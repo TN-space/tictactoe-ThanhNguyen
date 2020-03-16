@@ -49,6 +49,13 @@ const logOut = function () {
 //     }
 //   })
 // }
+// const gameCreate = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + '/games',
+//     method: 'POST',
+//     data: data
+//   })
+// }
 //
 // const gameUpdate = function () {
 //   return $.ajax({
