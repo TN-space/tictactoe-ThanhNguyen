@@ -1,6 +1,7 @@
 'use strict'
 
 const ui = require('./ui')
+const gameAPI = require('./api')
 
 // start count at 1
 let count = 1
@@ -24,16 +25,14 @@ const gamePlay = function (event) {
   if (currentValue === '') {
     if (count % 2 === 1) {
       // console.log(`Turn: ${count}`)
-      // add 'X' into the box
+      $('#message').text(`Player O turn!`)
       $(clickedDiv).text('X')
       board[boardPosition] = 'X'
-      count++
     } else if (count % 2 === 0) {
       // console.log(`Turn: ${count}`)
-      // add 'O'
+      $('#message').text(`Player X turn!`)
       $(clickedDiv).text('O')
       board[boardPosition] = 'O'
-      count++
     }
     // top row wi
 
@@ -83,6 +82,11 @@ const gamePlay = function (event) {
       ui.endGame()
       $('#message').text(`Game over~~! It's a Tie!!`)
     }
+    const turn = count % 2 === 1 ? 'X' : 'O'
+    gameAPI.gameUpdate(boardPosition, turn, gameOver)
+      .then(ui.onGameUpdateSuccess)
+      .catch(ui.onGameUpdateFailure)
+    count++
   }
 }
 

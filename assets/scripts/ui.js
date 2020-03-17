@@ -57,18 +57,6 @@ const logOutFailure = function (error) {
   console.log('logOutFailure error is: ', error)
 }
 
-const nextTurn = function (data) {
-  $('#message').removeClass()
-  const space = $(event.target).text()
-  if (space !== 'O' && space !== 'X') {
-    $('#message').text('Turn ' + data)
-    // $('#message').addClass('failure')
-    console.log('Turn: ', data)
-  } else {
-    $('#message').text('Still turn ' + data)
-  }
-}
-
 const endGame = function (data) {
   $('#message').removeClass()
 }
@@ -76,10 +64,45 @@ const endGame = function (data) {
 const viewStart = function (data) {
   $('.viewStart').show()
   $('.viewLoggedIn').hide()
+  $('.view-game').hide()
 }
 const viewLoggedIn = function (data) {
   $('.viewStart').hide()
   $('.viewLoggedIn').show()
+  $('.view-game').hide()
+}
+const gameCreateSuccessful = function (data) {
+  $('.viewStart').hide()
+  $('.viewLoggedIn').show()
+  $('.view-game').show()
+  store.game = data.game
+}
+const gameCreateFailure = function (error) {
+  console.log('the error is: ', error)
+}
+
+const onGameUpdateSuccess = function (data) {
+  console.log('data is: ', data)
+  store.game = data.game
+}
+const onGameUpdateFailure = function (error) {
+  $('#message').text('Move failed')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  console.log('Move fail is: ', error)
+}
+
+const total = function (data) {
+  $('#message').text(`You have played ${data.games.length} games`)
+  $('#message').removeClass()
+  // $('#message').addClass('failure')
+  console.log('total game played ', data.games.length)
+}
+const totalError = function (data) {
+  // $('#message').removeClass()
+  // $('#message').text('Total gameplay is: ', data.length)
+  // // $('#message').addClass('failure')
+  console.log('this is the error ', data)
 }
 
 module.exports = {
@@ -91,8 +114,13 @@ module.exports = {
   pwChangeFailure,
   logOutSuccess,
   logOutFailure,
-  nextTurn,
   endGame,
   viewStart,
-  viewLoggedIn
+  viewLoggedIn,
+  gameCreateSuccessful,
+  gameCreateFailure,
+  onGameUpdateSuccess,
+  onGameUpdateFailure,
+  total,
+  totalError
 }

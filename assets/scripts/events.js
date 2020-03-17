@@ -43,23 +43,53 @@ const onLogOut = function (event) {
   // or api.signUp(getFormFields(event.target))
 }
 
-let count = 0
-const onTurn = function (event) {
+// let count = 0
+// const onTurn = function (event) {
+//   event.preventDefault()
+//   // getting value of space eiher '', o, or x
+//   const space = $(event.target).text()
+//   console.log(space)
+//   // if space isn't o, or x, aka space is empty => can play
+//   if (space !== 'O' && space !== 'X') {
+//     $('#message').text('Turn ' + count)
+//     count++
+//     // or api.signUp(getFormFields(event.target)
+//     console.log(count)
+//   }
+//   $('#message').removeClass()
+// }
+
+const onGameCreate = function () {
   event.preventDefault()
-  const space = $(event.target).text()
-  console.log(space)
-  if (space !== 'O' && space !== 'X') {
-    count++
-    // or api.signUp(getFormFields(event.target)
-    console.log(count)
-  }
-  ui.nextTurn(count)
+  console.log('Creating game')
+  api.gameCreate()
+    .then(ui.gameCreateSuccessful)
+    .catch(ui.gameCreateFailure)
 }
+
+const onTotalGames = function () {
+  event.preventDefault()
+  console.log('total gameplays')
+  api.totalGamePlay()
+    .then(ui.total)
+    .catch(ui.totalError)
+}
+
+// const onGameUpdate = function (data) {
+//   event.preventDefault()
+//   console.log('Updating game')
+//   api.gameUpdate(data)
+//   // .then(ui.viewGame)
+//   // .catch(ui.signUpFailure)
+// }
 
 module.exports = {
   onSignUp,
   onSignIn,
   onPwChange,
   onLogOut,
-  onTurn
+  // onTurn,
+  onGameCreate,
+  onTotalGames
+  // onGameUpdate
 }
