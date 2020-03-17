@@ -18,6 +18,7 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   $('#message').text('Signed in successfully!')
   $('#message').removeClass()
+  viewLoggedIn()
   $('#message').addClass('success')
   console.log('signInSuccess data is: ', data)
   store.user = data.user
@@ -45,6 +46,7 @@ const pwChangeFailure = function (error) {
 const logOutSuccess = function (data) {
   $('#message').text('Logout successfully!')
   $('#message').removeClass()
+  viewStart()
   $('#message').addClass('success')
   console.log('logOutSuccess: ', data)
 }
@@ -71,13 +73,13 @@ const endGame = function (data) {
   $('#message').removeClass()
 }
 
-const pageLoaded1 = function (data) {
-  $('.second').style.visibility = 'visible'
-  $('.first').style.visibility = 'hidden'
+const viewStart = function (data) {
+  $('.viewStart').show()
+  $('.viewLoggedIn').hide()
 }
-const pageLoaded2 = function (data) {
-  $('.first').style.visibility = 'visible'
-  $('.second').style.visibility = 'hidden'
+const viewLoggedIn = function (data) {
+  $('.viewStart').hide()
+  $('.viewLoggedIn').show()
 }
 
 module.exports = {
@@ -91,6 +93,6 @@ module.exports = {
   logOutFailure,
   nextTurn,
   endGame,
-  pageLoaded1,
-  pageLoaded2
+  viewStart,
+  viewLoggedIn
 }

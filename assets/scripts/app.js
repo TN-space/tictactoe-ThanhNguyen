@@ -19,9 +19,7 @@ $(() => {
   $('#log-out').on('submit', authEvents.onLogOut)
   $('.box').on('click', authEvents.onTurn)
   $('.box').on('click', play.gamePlay)
-  $('.second').on('submit', page.pageLoaded1)
-  $('.first').on('submit', page.pageLoaded2)
-
+  page.viewStart()
   // $('.box').on('click', runThroughImport.runThrough)
   // $('#box1').click(function () {
   //   console.log('click')
