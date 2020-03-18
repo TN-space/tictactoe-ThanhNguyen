@@ -7,7 +7,7 @@
 // require('./example')
 
 const authEvents = require('./events.js')
-const play = require('./functions.js')
+// const play = require('./functions.js')
 const page = require('./ui')
 // const runThroughImport = require('./check-win')
 
@@ -18,7 +18,7 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onPwChange)
   $('#log-out').on('submit', authEvents.onLogOut)
-  $('.box').on('click', play.gamePlay)
+  $('.box').on('click', authEvents.gamePlay)
   $('.clickToCreate').on('click', authEvents.onGameCreate)
   $('.totalGames').on('click', authEvents.onTotalGames)
 

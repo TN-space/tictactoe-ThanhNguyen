@@ -3,57 +3,59 @@
 const store = require('./store')
 
 const signUpSuccess = function (data) {
-  $('#message').text('Signed up successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#signUpInOut').text('Signed up successfully')
+  $('#signUpInOut').removeClass()
+  $('#signUpInOut').addClass('success')
   console.log('signUpSuccess data is: ', data)
 }
 const signUpFailure = function (error) {
-  $('#message').text('Signed up failed')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#signUpInOut').text('Signed up failed')
+  $('#signUpInOut').removeClass()
+  $('#signUpInOut').addClass('failure')
   console.log('signUpFailure error is: ', error)
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Signed in successfully!')
-  $('#message').removeClass()
+  $('#signUpInOut').text('Signed in successfully!')
+  $('#signUpInOut').removeClass()
   viewLoggedIn()
-  $('#message').addClass('success')
+  $('#signUpInOut').addClass('success')
   console.log('signInSuccess data is: ', data)
   store.user = data.user
 }
 const signInFailure = function (error) {
-  $('#message').text('Signed in failed')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#signUpInOut').text('Signed in failed')
+  $('#signUpInOut').removeClass()
+  $('#signUpInOut').addClass('failure')
   console.log('signInFailure error is: ', error)
 }
 
 const pwChangeSuccess = function (data) {
-  $('#message').text('Password change successfully!')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#signUpInOut').show()
+  $('#signUpInOut').text('Password change successfully!')
+  $('#signUpInOut').removeClass()
+  $('#signUpInOut').addClass('success')
   console.log('PasswordChangeSuccess data is: ', data)
 }
 const pwChangeFailure = function (error) {
-  $('#message').text('Password change failed')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#signUpInOut').show()
+  $('#signUpInOut').text('Password change failed')
+  $('#signUpInOut').removeClass()
+  $('#signUpInOut').addClass('failure')
   console.log('PasswordChangeFailure error is: ', error)
 }
 
 const logOutSuccess = function (data) {
-  $('#message').text('Logout successfully!')
-  $('#message').removeClass()
+  $('#signUpInOut').text('Logout successfully!')
+  $('#signUpInOut').removeClass()
   viewStart()
-  $('#message').addClass('success')
+  $('#signUpInOut').addClass('success')
   console.log('logOutSuccess: ', data)
 }
 const logOutFailure = function (error) {
-  $('#message').text('How did you even fail logging out????')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#signUpInOut').text('How did you even fail logging out????')
+  $('#signUpInOut').removeClass()
+  $('#signUpInOut').addClass('failure')
   console.log('logOutFailure error is: ', error)
 }
 
@@ -62,6 +64,7 @@ const endGame = function (data) {
 }
 
 const viewStart = function (data) {
+  $('#signUpInOut').show()
   $('.viewStart').show()
   $('.viewLoggedIn').hide()
   $('.view-game').hide()
@@ -72,6 +75,7 @@ const viewLoggedIn = function (data) {
   $('.view-game').hide()
 }
 const gameCreateSuccessful = function (data) {
+  $('#signUpInOut').hide()
   $('.viewStart').hide()
   $('.viewLoggedIn').show()
   $('.view-game').show()
