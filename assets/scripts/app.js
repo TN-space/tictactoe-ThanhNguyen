@@ -14,18 +14,18 @@ const page = require('./ui')
 $(() => {
   // your JS code goes here
   page.viewStart()
+  // sign up on submit
   $('#sign-up').on('submit', authEvents.onSignUp)
+  // sign in on submit
   $('#sign-in').on('submit', authEvents.onSignIn)
+  // change pw on submit
   $('#change-password').on('submit', authEvents.onPwChange)
+  // sign out on submit
   $('#log-out').on('submit', authEvents.onLogOut)
+  // on click, add X and O (gamePlay)
   $('.box').on('click', authEvents.gamePlay)
+  // on click, create new game
   $('.clickToCreate').on('click', authEvents.onGameCreate)
+  // on click, give total gameplays
   $('.totalGames').on('click', authEvents.onTotalGames)
-
-  // $('.box').on('click', authEvents.onGameUpdate)
-
-  // $('.box').on('click', runThroughImport.runThrough)
-  // $('#box1').click(function () {
-  //   console.log('click')
-  // })
 })
