@@ -6,13 +6,17 @@ const signUpSuccess = function (data) {
   $('#signUpInOut').text('Signed up successfully')
   $('#signUpInOut').removeClass()
   $('#signUpInOut').addClass('success')
-  console.log('signUpSuccess data is: ', data)
+  $('form input[type="text"]').val('')
+  $('form input[type="password"]').val('')
+  // console.log('signUpSuccess data is: ', data)
 }
-const signUpFailure = function (error) {
+const signUpFailure = function (data) {
   $('#signUpInOut').text('Signed up failed')
   $('#signUpInOut').removeClass()
   $('#signUpInOut').addClass('failure')
-  console.log('signUpFailure error is: ', error)
+  $('form input[type="text"]').val('')
+  $('form input[type="password"]').val('')
+  // console.log('signUpFailure error is: ', error)
 }
 
 const signInSuccess = function (data) {
@@ -20,14 +24,18 @@ const signInSuccess = function (data) {
   $('#signUpInOut').removeClass()
   viewLoggedIn()
   $('#signUpInOut').addClass('success')
-  console.log('signInSuccess data is: ', data)
+  $('form input[type="text"]').val('')
+  $('form input[type="password"]').val('')
+  // console.log('signInSuccess data is: ', data)
   store.user = data.user
 }
-const signInFailure = function (error) {
+const signInFailure = function (data) {
   $('#signUpInOut').text('Signed in failed')
   $('#signUpInOut').removeClass()
   $('#signUpInOut').addClass('failure')
-  console.log('signInFailure error is: ', error)
+  $('form input[type="text"]').val('')
+  $('form input[type="password"]').val('')
+  // console.log('signInFailure error is: ', error)
 }
 
 const pwChangeSuccess = function (data) {
@@ -35,14 +43,18 @@ const pwChangeSuccess = function (data) {
   $('#signUpInOut').text('Password change successfully!')
   $('#signUpInOut').removeClass()
   $('#signUpInOut').addClass('success')
-  console.log('PasswordChangeSuccess data is: ', data)
+  $('form input[type="text"]').val('')
+  $('form input[type="password"]').val('')
+  // console.log('PasswordChangeSuccess data is: ', data)
 }
-const pwChangeFailure = function (error) {
+const pwChangeFailure = function (data) {
   $('#signUpInOut').show()
   $('#signUpInOut').text('Password change failed')
   $('#signUpInOut').removeClass()
   $('#signUpInOut').addClass('failure')
-  console.log('PasswordChangeFailure error is: ', error)
+  $('form input[type="text"]').val('')
+  $('form input[type="password"]').val('')
+  // console.log('PasswordChangeFailure error is: ', error)
 }
 
 const logOutSuccess = function (data) {
@@ -50,13 +62,17 @@ const logOutSuccess = function (data) {
   $('#signUpInOut').removeClass()
   viewStart()
   $('#signUpInOut').addClass('success')
-  console.log('logOutSuccess: ', data)
+  $('form input[type="text"]').val('')
+  $('form input[type="password"]').val('')
+  // console.log('logOutSuccess: ', data)
 }
-const logOutFailure = function (error) {
+const logOutFailure = function (data) {
   $('#signUpInOut').text('How did you even fail logging out????')
   $('#signUpInOut').removeClass()
   $('#signUpInOut').addClass('failure')
-  console.log('logOutFailure error is: ', error)
+  $('form input[type="text"]').val('')
+  $('form input[type="password"]').val('')
+  // console.log('logOutFailure error is: ', error)
 }
 
 const endGame = function (data) {
@@ -81,32 +97,32 @@ const gameCreateSuccessful = function (data) {
   $('.view-game').show()
   store.game = data.game
 }
-const gameCreateFailure = function (error) {
-  console.log('the error is: ', error)
+const gameCreateFailure = function (data) {
+  // console.log('the error is: ', error)
 }
 
 const onGameUpdateSuccess = function (data) {
-  console.log('data is: ', data)
+  // console.log('data is: ', data)
   store.game = data.game
 }
-const onGameUpdateFailure = function (error) {
+const onGameUpdateFailure = function (data) {
   $('#message').text('Move failed')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log('Move fail is: ', error)
+  // console.log('Move fail is: ', error)
 }
 
 const total = function (data) {
   $('#message').text(`You have played ${data.games.length} games`)
   $('#message').removeClass()
   // $('#message').addClass('failure')
-  console.log('total game played ', data.games.length)
+  // console.log('total game played ', data.games.length)
 }
 const totalError = function (data) {
   // $('#message').removeClass()
   // $('#message').text('Total gameplay is: ', data.length)
   // // $('#message').addClass('failure')
-  console.log('this is the error ', data)
+  // console.log('this is the data ', data)
 }
 
 module.exports = {
