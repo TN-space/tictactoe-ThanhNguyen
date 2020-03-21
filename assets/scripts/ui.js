@@ -79,22 +79,37 @@ const endGame = function (data) {
   $('#message').removeClass()
 }
 
+//  Opening view
+const signInMessage = function () {
+  return $('#message').html('Please sign up and sign in to play')
+}
 const viewStart = function (data) {
   $('#signUpInOut').show()
   $('.viewStart').show()
   $('.viewLoggedIn').hide()
   $('.view-game').hide()
+  $('#message').show(signInMessage)
+}
+// signed in view
+const signedIn = () => {
+  return $('#message').html('Click New Game to start playing')
 }
 const viewLoggedIn = function (data) {
   $('.viewStart').hide()
   $('.viewLoggedIn').show()
   $('.view-game').hide()
+  $('#message').show(signedIn)
+}
+// game created view
+const gameCreated = () => {
+  return $('#message').html('Player X turn!')
 }
 const gameCreateSuccessful = function (data) {
+  // $('#message').show()
   $('#signUpInOut').hide()
   $('.viewStart').hide()
   $('.viewLoggedIn').show()
-  $('.view-game').show()
+  $('.view-game').show(gameCreated)
   store.game = data.game
 }
 const gameCreateFailure = function (data) {
@@ -115,15 +130,16 @@ const onGameUpdateFailure = function (data) {
 const total = function (data) {
   $('#message').text(`You have played ${data.games.length} games`)
   $('#message').removeClass()
+  // $('#message').show()
   // $('#message').addClass('failure')
   // console.log('total game played ', data.games.length)
 }
-const totalError = function (data) {
-  // $('#message').removeClass()
-  // $('#message').text('Total gameplay is: ', data.length)
-  // // $('#message').addClass('failure')
-  // console.log('this is the data ', data)
-}
+// const totalError = function (data) {
+//   // $('#message').removeClass()
+//   // $('#message').text('Total gameplay is: ', data.length)
+//   // // $('#message').addClass('failure')
+//   // console.log('this is the data ', data)
+// }
 
 module.exports = {
   signUpSuccess,
@@ -141,6 +157,6 @@ module.exports = {
   gameCreateFailure,
   onGameUpdateSuccess,
   onGameUpdateFailure,
-  total,
-  totalError
+  total
+  // totalError
 }
