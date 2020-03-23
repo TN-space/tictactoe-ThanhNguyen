@@ -121,7 +121,7 @@ const onGameUpdateSuccess = function (data) {
   store.game = data.game
 }
 const onGameUpdateFailure = function (data) {
-  $('#message').text('Move failed')
+  // $('#message').text('Move failed!!!!!!!!!!!!!')
   $('#message').removeClass()
   $('#message').addClass('failure')
   // console.log('Move fail is: ', error)

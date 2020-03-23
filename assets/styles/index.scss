@@ -1,20 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 
 $wrap-around: solid #000;
+$box-bacground: rgba(0, 0, 0, .45);
+$box-content: rgba(255, 255, 255, 1);
+$hover: rgba(0, 0, 0, .3);
 
-// img{
-//   height: 100%;
-//   width: 100%;
-// }
-// .hide {
-//   opacity: 0;
-// }
-// .show {
-//   opacity: 1;
-// }
 body {
   background-image: url('public/images/background.jpg');
-  // background-image: url('https://github.com/TN-space/tictactoe-ThanhNguyen/tree/master/public/background.jpg')
   background-size: cover;
 }
 
@@ -25,40 +17,42 @@ h1 {
   padding: 10px;
   padding-left: 20px;
 }
-// .second {
-//   visibility: hidden;
-// }
-p {
-  padding-left: 25px;
-  font-family: 'Inter', sans-serif;
 
+p {
+  font-family: 'Inter', sans-serif;
+  padding-left: 25px;
 }
+
 main {
+  align-items: center;
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   height: 60vh;
-  align-items: center;
-  padding: 20px 20px;
+  padding: 20px;
+}
+
+main div:hover {
+  background-color: $hover;
 }
 
 nav {
+  align-items: stretch;
   display: flex;
   font-family: 'Noticia Text', serif;
   // border: solid black;
   font-size: 15px;
   font-weight: 1000;
   padding: 10px 25px;
-  align-items: stretch;
 }
 
 h2 {
+  display: flex;
+  font-family: 'Permanent Marker', cursive;
+  justify-content: center;
   padding: 50px 20px;
   // border: solid black;
-  display: flex;
-  justify-content: center;
   // align-items: flex-end;
-  font-family: 'Permanent Marker', cursive;
 }
 
 .float-left {
@@ -78,41 +72,58 @@ h2 {
 }
 
 div {
-  font-family: 'Permanent Marker', cursive;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  background-color: $box-bacground;
+  color: $box-content;
+  display: flex;
+  font-family: 'Permanent Marker', cursive;
   font-size: 15vh;
-  background-color: rgba(0, 0, 0, 0.45);
-  color: rgba(255, 255, 255, 1);
+  justify-content: center;
 }
 
 .row1 {
   border: $wrap-around;
-  width: calc(100%/3);
-  height: calc(100%/3;
+  height: calc(100% / 3);
+  width: calc(100% / 3);
 }
 
 .row2 {
   border: $wrap-around;
-  width: calc(100%/3);
-  height: calc(100%/3;
+  height: calc(100% / 3);
+  width: calc(100% / 3);
 }
 
 .row3 {
   border: $wrap-around;
-  width: calc(100%/3);
-  height: calc(100%/3;
+  height: calc(100% / 3);
+  width: calc(100% / 3);
 }
 
-main div:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+footer {
+  // align-items: flex-end;
+  // border: solid black;
+  bottom: 5px;
+  // display: flex;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  position: absolute;
+  right: 5px;
+  // justify-content: flex-end;
 }
+
+// @media screen and (max-width: 300px) {
+//   body {
+//     background-size: auto;
+//     background-repeat: no-repeat;
+//   }
+// }
 
 
 .failure {
   color: #ff0000;
 }
+
 .success {
   color: #00ff00;
 }
