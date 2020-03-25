@@ -23,3 +23,8 @@ JavaScript
 
 ### Improvement
 Would like to add 2 more difficulty levels, each with bigger board game. The hardest level requires 5 in a row to win.
+
+### Image
+
+#### Wireframe
+<img src="images/wireframe.jpg">
