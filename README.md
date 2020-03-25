@@ -27,4 +27,4 @@ Would like to add 2 more difficulty levels, each with bigger board game. The har
 ### Image
 
 #### Wireframe
-<img src="images/wireframe.jpg">
+<img src="./public/images/wireframe.jpg">
