@@ -10,10 +10,10 @@ https://github.com/TN-space/tictactoe-ThanhNguyen
 ## Planning
 
 ### User stories
-As a user I want to have my own account.
-As a user I want to be able to change my account password.
-As a user I want to be able to start a game.
-As a user I want to want to see how many games I had played.
+As a user I want to have my own account. \
+As a user I want to be able to change my account password. \
+As a user I want to be able to start a game. \
+As a user I want to want to see how many games I had played. \
 As a user I want to be able to log out and have my game information saved.
 
 ### Technologies used
